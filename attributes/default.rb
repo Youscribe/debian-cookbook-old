@@ -6,10 +6,17 @@ default['debian']['sections'] = [ "contrib", "main", "non-free"]
 case short_version
 when '4'
   default['debian']['codename'] = "etch"
-  default['debian']['repos'] = [ { "url" => "http://archive.debian.org/debian/" } ]
+  default['debian']['repos'] = [ 
+    { "url" => "http://archive.debian.org/debian/" },
+    { "url" => "http://archive.debian.org/backports.org/", "codename" => "etch-backports" },
+   ]
 when '5'
   default['debian']['codename'] = "lenny"
-  default['debian']['repos'] = [ { "url" => "http://archive.debian.org/debian/" } ]
+  default['debian']['repos'] = [ 
+    { "url" => "http://archive.debian.org/debian/" },
+    { "url" => "http://archive.debian.org/backports.org/", "codename" => "lenny-backports" },
+    { "url" => "http://archive.debian.org/backports.org/", "codename" => "lenny-backports-sloppy"}
+   ]
 when '6'
   default['debian']['codename'] = "squeeze"
   default['debian']['repos'] = [ 
